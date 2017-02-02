@@ -1,7 +1,7 @@
 /**
  * 
  */
-package vw.codechef.practice.easy;
+package vw.codechef.practice.beginner;
 
 /**
  * @author vivek

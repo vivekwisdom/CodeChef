@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * @author vivek.wisdom
+ * @author vivek
  *
  */
 public class UncleJohny {

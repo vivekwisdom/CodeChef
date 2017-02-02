@@ -1,7 +1,7 @@
 /**
  * 
  */
-package vw.codechef.practice.easy;
+package vw.codechef.practice.beginner;
 
 /**
  * @author vivek
@@ -15,14 +15,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
  * @author vivek
  *
  */
-public class UncleJohnyFast implements Closeable {
+public class CatsAndDogs implements Closeable {
 	private InputReader in = new InputReader(System.in);
 	private PrintWriter out = new PrintWriter(new BufferedOutputStream(System.out));
 
@@ -32,13 +31,19 @@ public class UncleJohnyFast implements Closeable {
 	public void solve() {
 		int testCases = in.nextInt();
 		for (int i = 0; i < testCases; i++) {
-			int[] arr = new int[in.nextInt()];
-			for (int j = 0; j < arr.length; j++) {
-				arr[j] = in.nextInt();
+			long c = in.nextLong();
+			long d = in.nextLong();
+			long l = in.nextLong();
+
+			if (l % 4 == 0 && l <= ((c + d) * 4) && l >= (4 * d)) {
+				long cats = (4 * (c + d) - l) / 4;
+				if (cats <= 2 * d)
+					out.println("yes");
+				else
+					out.println("no");
+			} else {
+				out.println("no");
 			}
-			int ni = arr[in.nextInt() - 1];
-			Arrays.sort(arr);
-			out.println(Arrays.binarySearch(arr, ni) + 1);
 		}
 	}
 
@@ -82,7 +87,7 @@ public class UncleJohnyFast implements Closeable {
 	}
 
 	public static void main(String[] args) throws IOException {
-		try (UncleJohnyFast instance = new UncleJohnyFast()) {
+		try (CatsAndDogs instance = new CatsAndDogs()) {
 			instance.solve();
 		}
 	}
